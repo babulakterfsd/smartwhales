@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --swiper-navigation-size: theme("spacing.2");
+  --swiper-theme-color: theme("colors.white");
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  @apply inset-y-0 my-auto rounded-full border border-[#5200FF] bg-[#5200FF] p-5;
+}
+
+.swiper-button-disabled {
+  @apply border-[#272727] bg-[#0f0f0f] !opacity-100;
+}
+.svg-container {
+  position: relative;
+}
+.svg-container svg:first-child {
+  position: absolute;
+  top: 7px;
+  left: 16px;
+}
+
+.bg-grid {
+  background-image: radial-gradient(transparent 40%, #000), url(/bg-grid.svg);
+}
+
+@supports (offset-path: inherit) {
+  .shooter {
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(270deg, #6a68ff, transparent);
+    border-radius: 0;
+    offset-distance: 0;
+    animation: glide 5s ease-in infinite;
+    opacity: 0;
+  }
+  .shooter--1 {
+    offset-path: path("M131.096 716L131.096 33.5");
+    animation-delay: 2s;
+  }
+  .shooter--2 {
+    offset-path: path("M98.621 651L98.621 98.5");
+    animation-delay: 0;
+  }
+  .shooter--3 {
+    offset-path: path("M1138.6 651L1138.6 98.5");
+    animation-delay: 1s;
+  }
+  .shooter--4 {
+    offset-path: path("M1171.12 683.5L1171.12 33.5");
+    animation-delay: 0.3s;
+  }
+  .shooter--5 {
+    offset-path: path("M1073.61 391L1073.61 33.5");
+    animation-delay: 1.2s;
+  }
+  .shooter--6 {
+    offset-path: path("M66.121 423.5L66.121 33.5");
+    animation-delay: 0.75s;
+  }
+
+  @keyframes trace {
+    0% {
+      offset-distance: 0;
+      motion-offset: 0;
+      opacity: 0;
+    }
+    5% {
+      opacity: 100%;
+    }
+    10% {
+      offset-distance: 100%;
+      motion-offset: 100%;
+      opacity: 0;
+    }
+    to {
+      offset-distance: 100%;
+      motion-offset: 100%;
+      opacity: 0;
+    }
+  }
+  @keyframes glide {
+    0% {
+      offset-distance: 0;
+      motion-offset: 0;
+      opacity: 0;
+    }
+    50% {
+      opacity: 100%;
+    }
+    80% {
+      offset-distance: 100%;
+      motion-offset: 100%;
+      opacity: 0;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .shooter {
+    display: none;
+  }
+}
+
+.gradientTitle {
+  background: linear-gradient(
+    to right,
+    rgb(215, 216, 226) 1%,
+    rgb(176, 173, 27) 100%,
+    rgb(7, 97, 233) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
