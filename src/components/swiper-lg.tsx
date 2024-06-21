@@ -1,8 +1,8 @@
 "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
 import TweetEmbed from "react-tweet-embed";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export const SwiperLg = () => {
   const tweetEmbedOptions = { theme: "dark" };

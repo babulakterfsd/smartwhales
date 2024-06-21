@@ -53,7 +53,7 @@ import { WhaleBannerAnimation } from "@/components/whale-banner-animation";
 import { socialLinks } from "@/lib/constants";
 
 const Home = () => {
-  const targetDate = new Date("2024-04-30T23:59:59");
+  const targetDate = new Date("2027-12-31T23:59:59");
 
   return (
     <>
